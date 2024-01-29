@@ -11,7 +11,7 @@ class Sudoku(structure: Array<IntArray>) {
         for (j in 0..<9) {
             for (i in 0..<9) {
                 val value = try {
-                    structure[i][j]
+                    structure[j][i]
                 } catch (_: IndexOutOfBoundsException) {
                     throw IllegalArgumentException("cell $i $j does not exits")
                 }
@@ -33,7 +33,6 @@ class Sudoku(structure: Array<IntArray>) {
             for (j in 0..<9) {
                 if (j % 3 == 0) appendBar()
                 for (i in 0..<9) {
-                    val pos = Position2D(i, j)
                     if (i % 3 == 0) append("|")
                     append(data[i][j].value ?: "x")
                     if (i == 8) append("|")
