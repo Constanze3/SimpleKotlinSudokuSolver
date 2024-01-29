@@ -1,7 +1,6 @@
 import org.example.Position2D
 import org.example.Sudoku
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class SudokuTest {
     private val testPuzzle1 = arrayOf(

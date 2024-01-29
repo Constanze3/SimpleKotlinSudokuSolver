@@ -34,7 +34,7 @@ class SudokuSolver(sudoku: Sudoku) {
             var i = 0
             while (true) {
                 if (i < solutions.size) {
-                    yield(solutions.get(i))
+                    yield(solutions[i])
                     i++
                 } else {
                     if (solutionGenerator.hasNext()) {
@@ -50,7 +50,7 @@ class SudokuSolver(sudoku: Sudoku) {
         }
     }
 
-    private val solutionGenerator = solve(sudoku.data.flatten().filter { cell -> cell.value == null })
+    private val solutionGenerator = solve(this.sudoku.data.flatten().filter { cell -> cell.value == null })
     private fun solve(emptyCells: List<SudokuCell>): Iterator<Sudoku> = iterator {
         if (emptyCells.isEmpty()) {
             if (workingSudoku.isSolved()) {

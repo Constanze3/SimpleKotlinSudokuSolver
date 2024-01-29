@@ -43,7 +43,7 @@ class SudokuSolverTest {
         val solutions = SudokuSolver(sudoku).getAllSolutions()
         assertEquals(1, solutions.size)
 
-        val solution = extractContent(solutions.get(0))
+        val solution = extractContent(solutions[0])
         assert(testPuzzle2Solved contentDeepEquals solution.transpose())
     }
 }

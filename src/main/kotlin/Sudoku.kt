@@ -66,7 +66,7 @@ class Sudoku(private val structure: Array<IntArray>) {
         for (j in 0..<9) {
             if (j == position.y) continue
             if (data[position.x][j].value == value) {
-                return false;
+                return false
             }
         }
 
@@ -77,7 +77,7 @@ class Sudoku(private val structure: Array<IntArray>) {
             for (j in 0..<3) {
                 if (blockX + i == position.x && blockY + j == position.y) continue
                 if (data[blockX + i][blockY + j].value == value) {
-                    return false;
+                    return false
                 }
             }
         }
