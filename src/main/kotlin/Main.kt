@@ -15,6 +15,8 @@ val examplePuzzle1 = arrayOf(
 fun main() {
     val sudoku = Sudoku(examplePuzzle1)
     println(sudoku)
-    solve(sudoku)
-    println(sudoku)
+
+    val solver = SudokuSolver(sudoku)
+    println("Solution:")
+    println(solver.getSolutionIterator().next())
 }
